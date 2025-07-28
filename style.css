@@ -1,0 +1,249 @@
+@font-face {
+    font-family: fbprg;
+    src: url(./font/FreightBigProLight-Regular.woff2);
+}
+@font-face {
+    font-family: fbpit;
+    src: url(./font/FreightBigProLight-Italic.woff2);
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+html, body {
+    height: 100%;
+    width: 100%;
+}
+body{
+    overflow-x: hidden;
+}
+
+body::-webkit-scrollbar{
+    display: none;
+}
+#main{
+    background-color: #000000;
+}
+#loader{
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    background-color: #000000;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    z-index: 99;
+    /* display: none; */
+}
+#loader h1{
+    font-size: 6.9vw;
+    font-family: fbprg;
+    line-height: 5.5vw;
+    font-weight: 100;
+    letter-spacing: -3px;
+    position: relative;
+    z-index: 9;
+}
+#loader h1 em{
+    font-family: fbprg;
+    font-weight: 100;
+}
+#loader #yellow1{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: #f5e418;
+    z-index: 8;
+}
+#loader #yellow2{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: #f5e418;
+    z-index: 7;
+}
+#loader video{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    z-index: 6;
+}
+#nav{
+    position: absolute;
+    width: 100%;
+    z-index: 10;
+    padding: 30px 50px;
+    height: 80px;
+}
+#nav svg{
+    height: 100%;
+
+}
+
+
+#page1{
+    height: 100vh;
+    width: 100vw;
+    background-color: #f5e418;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+#page1 h1{
+    font-size: 6.9vw;
+    font-family: fbprg;
+    line-height: 5.5vw;
+    font-weight: 100;
+    letter-spacing: -3px;
+}
+#page1 h1 em{
+    font-family: fbprg;
+    font-weight: 100;
+}
+#page2{
+    min-height: 100vh;
+    width: 100vw;
+    background-color: #000000;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: background 0.5s ease;
+    position: relative;
+}
+
+#page2 .elem{
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+#page2 .elem h2{
+    font-size: 6.8vw;
+    line-height: 5vw;
+    font-weight: 100;
+    font-family: "fbprg";
+    text-transform: uppercase;
+    z-index: 2;
+    transition: all 0.5s ease;
+}
+
+#page2 .elem .moving{
+    width: 100%;
+    white-space: nowrap;
+    background-color: #f5e418;
+    padding: 6px 0;
+    position: absolute;
+    top: 50%;
+    transition: all 0.3s ease;
+    transform: translateY(-50%) scaleY(0);
+}
+
+#page2 .elem .moving .moving-in{
+    white-space: nowrap;
+    display: inline-block;
+    animation: moving 7s linear infinite;
+}
+
+#page2 .elem .moving .moving-in h5{
+    display: inline-block;
+    margin-right: 30px;
+    text-transform: uppercase;
+    font-family: "fbprg";
+    font-weight: 600;
+    word-spacing: 5px;
+    font-size: 19px;
+    color: #000000;
+    opacity: 0;
+    transition: all 0.3s ease;
+    transition-delay: 0.2s;
+}
+@keyframes moving {
+    from{
+        transform: translateX(0%);
+    }
+
+    to{
+        transform: translateX(-100%);
+    }
+}
+
+#page2 .elem:hover h2{
+    opacity: 1;
+    font-family: "fbpit";
+    margin-left: 50px;
+    color: #000000;
+}
+#page2 .elem:hover .moving{
+    transform: translateY(-50%) scaleY(1);
+}
+
+#page2 .elem:hover .moving .moving-in h5{
+    opacity: 1;
+}
+
+#page3{
+    min-height: 100vh;
+    width: 100vw;
+    background-color: #fff;
+    padding: 50px 30px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+    
+}
+
+#page3 .image-container .overlay{
+    position: absolute;
+    background-color: #000000;
+    color: #fff;
+    text-align: center;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 1s ease;
+    opacity: 0;
+    padding: 0 20px;
+}
+#page3 .image-container .overlay p{
+    font-size: 30px;
+    transition: opacity 1s ease;
+    opacity: 0;
+}
+#page3 .image-container{
+    position: relative;
+    flex-shrink: 0;
+    height: 70vh;
+    width: 30vw;
+    overflow: hidden;
+}
+#page3 .image-container:hover .overlay{
+    opacity: 1;
+}
+#page3 .image-container:hover .overlay p{
+    opacity: 1;
+}
+
+#page3 .image-container:hover img{
+    transform: scale(1.1);
+    transition: transform 0.5s ease;
+}
+#page3 .image-container img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
