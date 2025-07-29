@@ -2,31 +2,43 @@
     font-family: fbprg;
     src: url(./font/FreightBigProLight-Regular.woff2);
 }
+
 @font-face {
     font-family: fbpit;
     src: url(./font/FreightBigProLight-Italic.woff2);
 }
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
-html, body {
+
+html,
+body {
     height: 100%;
     width: 100%;
 }
-body{
+
+body {
     overflow-x: hidden;
 }
 
-body::-webkit-scrollbar{
+body::selection {
+    background-color: black;
+    color: #f5e418;
+}
+
+body::-webkit-scrollbar {
     display: none;
 }
-#main{
+
+#main {
     background-color: #000000;
 }
-#loader{
+
+#loader {
     position: fixed;
     height: 100vh;
     width: 100vw;
@@ -37,9 +49,9 @@ body::-webkit-scrollbar{
     justify-content: center;
     text-align: center;
     z-index: 99;
-    /* display: none; */
 }
-#loader h1{
+
+#loader h1 {
     font-size: 6.9vw;
     font-family: fbprg;
     line-height: 5.5vw;
@@ -48,45 +60,51 @@ body::-webkit-scrollbar{
     position: relative;
     z-index: 9;
 }
-#loader h1 em{
+
+#loader h1 em {
     font-family: fbprg;
     font-weight: 100;
 }
-#loader #yellow1{
+
+#loader #yellow1 {
     position: absolute;
     height: 100%;
     width: 100%;
     background-color: #f5e418;
     z-index: 8;
 }
-#loader #yellow2{
+
+#loader #yellow2 {
     position: absolute;
     height: 100%;
     width: 100%;
     background-color: #f5e418;
     z-index: 7;
 }
-#loader video{
+
+#loader video {
     position: absolute;
     height: 100%;
     width: 100%;
     object-fit: cover;
     z-index: 6;
 }
-#nav{
+
+#nav {
     position: absolute;
     width: 100%;
     z-index: 10;
     padding: 30px 50px;
     height: 80px;
 }
-#nav svg{
+
+#nav svg {
     height: 100%;
 
 }
 
 
-#page1{
+#page1 {
     height: 100vh;
     width: 100vw;
     background-color: #f5e418;
@@ -95,18 +113,21 @@ body::-webkit-scrollbar{
     justify-content: center;
     text-align: center;
 }
-#page1 h1{
+
+#page1 h1 {
     font-size: 6.9vw;
     font-family: fbprg;
     line-height: 5.5vw;
     font-weight: 100;
     letter-spacing: -3px;
 }
-#page1 h1 em{
+
+#page1 h1 em {
     font-family: fbprg;
     font-weight: 100;
 }
-#page2{
+
+#page2 {
     min-height: 100vh;
     width: 100vw;
     background-color: #000000;
@@ -120,15 +141,17 @@ body::-webkit-scrollbar{
     position: relative;
 }
 
-#page2 .elem{
+#page2 .elem {
     width: 100%;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    z-index: 11;
 }
-#page2 .elem h2{
+
+#page2 .elem h2 {
     font-size: 6.8vw;
     line-height: 5vw;
     font-weight: 100;
@@ -138,7 +161,7 @@ body::-webkit-scrollbar{
     transition: all 0.5s ease;
 }
 
-#page2 .elem .moving{
+#page2 .elem .moving {
     width: 100%;
     white-space: nowrap;
     background-color: #f5e418;
@@ -149,13 +172,13 @@ body::-webkit-scrollbar{
     transform: translateY(-50%) scaleY(0);
 }
 
-#page2 .elem .moving .moving-in{
+#page2 .elem .moving .moving-in {
     white-space: nowrap;
     display: inline-block;
     animation: moving 7s linear infinite;
 }
 
-#page2 .elem .moving .moving-in h5{
+#page2 .elem .moving .moving-in h5 {
     display: inline-block;
     margin-right: 30px;
     text-transform: uppercase;
@@ -168,43 +191,52 @@ body::-webkit-scrollbar{
     transition: all 0.3s ease;
     transition-delay: 0.2s;
 }
+
 @keyframes moving {
-    from{
+    from {
         transform: translateX(0%);
     }
 
-    to{
+    to {
         transform: translateX(-100%);
     }
 }
 
-#page2 .elem:hover h2{
+#page2 .elem:hover h2 {
     opacity: 1;
     font-family: "fbpit";
     margin-left: 50px;
     color: #000000;
 }
-#page2 .elem:hover .moving{
+
+#page2 .elem:hover .moving {
     transform: translateY(-50%) scaleY(1);
 }
 
-#page2 .elem:hover .moving .moving-in h5{
+#page2 .elem:hover .moving .moving-in h5 {
     opacity: 1;
 }
 
-#page3{
-    min-height: 100vh;
+#page3 {
+    /* min-height: 100vh;
     width: 100vw;
     background-color: #fff;
     padding: 50px 30px;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    gap: 30px;
-    
+    gap: 30px; */
+
+
+    height: 294vh;
+    column-width: 20vw;
+    overflow-x: hidden;
+    padding: 10px;
+    background-color: #fff;
+
 }
 
-#page3 .image-container .overlay{
+#page3 .image-container .overlay {
     position: absolute;
     background-color: #000000;
     color: #fff;
@@ -219,31 +251,138 @@ body::-webkit-scrollbar{
     opacity: 0;
     padding: 0 20px;
 }
-#page3 .image-container .overlay p{
+
+#page3 .image-container .overlay p {
     font-size: 30px;
     transition: opacity 1s ease;
     opacity: 0;
 }
-#page3 .image-container{
+
+#page3 .image-container {
     position: relative;
-    flex-shrink: 0;
-    height: 70vh;
-    width: 30vw;
+    /* flex-shrink: 0; */
+    /* height: 70vh;
+    width: 30vw; */
     overflow: hidden;
+    cursor: pointer;
 }
-#page3 .image-container:hover .overlay{
-    opacity: 1;
-}
-#page3 .image-container:hover .overlay p{
+
+#page3 .image-container:hover .overlay {
     opacity: 1;
 }
 
-#page3 .image-container:hover img{
+#page3 .image-container:hover .overlay p {
+    opacity: 1;
+}
+
+#page3 .image-container:hover img {
     transform: scale(1.1);
     transition: transform 0.5s ease;
 }
-#page3 .image-container img{
-    height: 100%;
+
+#page3 .image-container img {
+    /* height: 100%;
     width: 100%;
+    object-fit: cover; */
+
+    width: 100%;
+    height: auto;
     object-fit: cover;
+    /* margin-left: 10px; */
+    margin-bottom: 10px;
+}
+
+#footer{
+    min-height: 50vh;
+    width: 100%;
+}
+
+#footer #part1{
+    height: 20vh;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#footer #part1 i{
+    cursor: pointer;
+    font-weight: 700;
+}
+
+#footer #part1 p{
+    cursor: pointer;
+    font-weight: 600;
+}
+
+
+#footer #part2{
+    height: 30vh;
+    width: 100%;
+    background-color: #f5e418;
+    color: #000;
+    display: flex;
+    padding: 2vh;
+    gap: 2vh;
+    overflow: hidden;
+}
+#footer #part2 #left{
+    height: 100%;
+    width: 60%;
+}
+
+#footer #part2 #right{
+    height: 100%;
+    width: 40%;
+}
+
+#footer #part2 #right #top{
+    height: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+#footer #part2 #right #top a{
+    display: block;
+    text-decoration: none;
+    color: #000;
+}
+#footer #part2 #right #bottom{
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    height: 50%;
+    width: 100%;
+    padding-bottom: 1vh;
+    position: relative;
+}
+
+#footer #part2 #right #bottom input{
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    font-size: 16px;
+    border-bottom: 1px solid #000;
+    outline: none;
+}
+#footer #part2 #right #bottom input:focus{
+    outline: none;
+}
+#footer #part2 #right #bottom input::placeholder{
+    color: #000;
+}
+
+#footer #part2 #right #bottom button{
+    position: absolute;
+    right: 0px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+#footer #part2 #right #bottom button i{
+    color: #000;
+    font-size: 16px;
 }
