@@ -46,7 +46,6 @@ function hovereffect() {
     elems.forEach(function (elemTag) {
         elemTag.addEventListener("mouseenter", function () {
             var bgimgurl = elemTag.getAttribute("data-img");
-            console.log(bgimgurl);
             page2.style.backgroundImage = `url(${bgimgurl})`;
             page2.style.backgroundSize = `cover`;
             page2.style.backgroundPosition = `center`;
@@ -113,3 +112,4 @@ function loco() {
     });
 };
 loco();
+
