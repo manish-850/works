@@ -22,15 +22,14 @@ modern web technologies.
 
 ## Tech Stack
 
--   HTML5\
--   CSS3\
--   JavaScript\
--   Locomotive Scroll\
+-   HTML5
+-   CSS3
+-   JavaScript
+-   Locomotive Scroll
 -   Remix Icon CDN
 
 ## Project Structure
 
-    /
     |-- index.html
     |-- style.css
     |-- script.js
